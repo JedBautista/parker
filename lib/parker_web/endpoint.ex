@@ -1,16 +1,16 @@
-defmodule PettoCRAPWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :pettoCRAP
+defmodule ParkerWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :Parker
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_pettoCRAP_key",
+    key: "_Parker_key",
     signing_salt: "516HZY2T"
   ]
 
-  socket "/socket", PettoCRAPWeb.UserSocket,
+  socket "/socket", ParkerWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -22,7 +22,7 @@ defmodule PettoCRAPWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :pettoCRAP
+    from: :Parker
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -30,7 +30,7 @@ defmodule PettoCRAPWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :pettoCRAP
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :Parker
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -48,5 +48,5 @@ defmodule PettoCRAPWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PettoCRAPWeb.Router
+  plug ParkerWeb.Router
 end

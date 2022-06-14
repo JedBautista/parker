@@ -1,4 +1,4 @@
-# PettoCRAP
+# Parker
 
 To start your Phoenix server:
 

@@ -1,5 +1,5 @@
-defmodule PettoCRAPWeb.PageControllerTest do
-  use PettoCRAPWeb.ConnCase
+defmodule ParkerWeb.PageControllerTest do
+  use ParkerWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

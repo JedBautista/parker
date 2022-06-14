@@ -1,4 +1,4 @@
-defmodule PettoCRAP.DataCase do
+defmodule Parker.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule PettoCRAP.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PettoCRAP.DataCase, async: true`, although
+  by setting `use Parker.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule PettoCRAP.DataCase do
 
   using do
     quote do
-      alias PettoCRAP.Repo
+      alias Parker.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import PettoCRAP.DataCase
+      import Parker.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PettoCRAP.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Parker.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PettoCRAP.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Parker.Repo, {:shared, self()})
     end
 
     :ok

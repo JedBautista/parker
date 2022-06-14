@@ -1,5 +1,5 @@
-defmodule PettoCRAPWeb.Router do
-  use PettoCRAPWeb, :router
+defmodule ParkerWeb.Router do
+  use ParkerWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule PettoCRAPWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PettoCRAPWeb do
+  scope "/", ParkerWeb do
     pipe_through :browser
 
     get "/", PageController, :index
@@ -21,7 +21,7 @@ defmodule PettoCRAPWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PettoCRAPWeb do
+  # scope "/api", ParkerWeb do
   #   pipe_through :api
   # end
 
@@ -32,12 +32,12 @@ defmodule PettoCRAPWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
-  if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
+  # if Mix.env() in [:dev, :test] do
+  #   import Phoenix.LiveDashboard.Router
 
-    scope "/" do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: PettoCRAPWeb.Telemetry
-    end
-  end
+  #   scope "/" do
+  #     pipe_through :browser
+  #     live_dashboard "/dashboard", metrics: ParkerWeb.Telemetry
+  #   end
+  # end
 end

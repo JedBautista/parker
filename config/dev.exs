@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :pettoCRAP, PettoCRAP.Repo,
+config :Parker, Parker.Repo,
   username: "postgres",
   password: "postgres",
-  database: "pettocrap_dev",
+  database: "parker_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,19 +15,18 @@ config :pettoCRAP, PettoCRAP.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :pettoCRAP, PettoCRAPWeb.Endpoint,
+config :Parker, ParkerWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  check_origin: false
-
-# watchers: [
-#   node: [
-#     "node_modules/react-scripts/bin/react-scripts.js",
-#     "start",
-#     cd: Path.expand("../assets", __DIR__)
-#   ]
-# ]
+  check_origin: false,
+  watchers: [
+    node: [
+      "node_modules/react-scripts/bin/react-scripts.js",
+      "start",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 # ## SSL Support
 #
@@ -54,13 +53,13 @@ config :pettoCRAP, PettoCRAPWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :pettoCRAP, PettoCRAPWeb.Endpoint,
+config :Parker, Parker.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/pettoCRAP_web/(live|views)/.*(ex)$",
-      ~r"lib/pettoCRAP_web/templates/.*(eex)$"
+      ~r"lib/Parker_web/(live|views)/.*(ex)$",
+      ~r"lib/Parker_web/templates/.*(eex)$"
     ]
   ]
 

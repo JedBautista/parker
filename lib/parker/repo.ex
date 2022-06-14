@@ -1,5 +1,5 @@
-defmodule PettoCRAP.Repo do
+defmodule Parker.Repo do
   use Ecto.Repo,
-    otp_app: :pettoCRAP,
+    otp_app: :Parker,
     adapter: Ecto.Adapters.Postgres
 end

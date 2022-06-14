@@ -1,12 +1,12 @@
-defmodule PettoCRAPWeb do
+defmodule ParkerWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PettoCRAPWeb, :controller
-      use PettoCRAPWeb, :view
+      use ParkerWeb, :controller
+      use ParkerWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule PettoCRAPWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PettoCRAPWeb
+      use Phoenix.Controller, namespace: ParkerWeb
 
       import Plug.Conn
-      import PettoCRAPWeb.Gettext
-      alias PettoCRAPWeb.Router.Helpers, as: Routes
+      import ParkerWeb.Gettext
+      alias ParkerWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/pettoCRAP_web/templates",
-        namespace: PettoCRAPWeb
+        root: "lib/Parker_web/templates",
+        namespace: ParkerWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule PettoCRAPWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PettoCRAPWeb.Gettext
+      import ParkerWeb.Gettext
     end
   end
 
@@ -66,9 +66,9 @@ defmodule PettoCRAPWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PettoCRAPWeb.ErrorHelpers
-      import PettoCRAPWeb.Gettext
-      alias PettoCRAPWeb.Router.Helpers, as: Routes
+      import ParkerWeb.ErrorHelpers
+      import ParkerWeb.Gettext
+      alias ParkerWeb.Router.Helpers, as: Routes
     end
   end
 

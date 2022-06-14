@@ -7,16 +7,16 @@
 # General application configuration
 use Mix.Config
 
-config :pettoCRAP,
-  ecto_repos: [PettoCRAP.Repo],
+config :Parker,
+  ecto_repos: [Parker.Repo],
   generators: [binary_id: true]
 
 # Configures the endpoint
-config :pettoCRAP, PettoCRAPWeb.Endpoint,
+config :Parker, ParkerWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "4LvV+rSArB8mkCIIQ/jMstKNMjui4QnkIs1zhUxshnEor0C8qQoLF9Ccbc1p5bT5",
-  render_errors: [view: PettoCRAPWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PettoCRAP.PubSub,
+  render_errors: [view: ParkerWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Parker.PubSub,
   live_view: [signing_salt: "NKZ8rPcc"]
 
 # Configures Elixir's Logger

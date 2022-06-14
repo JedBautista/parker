@@ -1,4 +1,4 @@
-defmodule PettoCRAPWeb.ChannelCase do
+defmodule ParkerWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule PettoCRAPWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PettoCRAPWeb.ChannelCase, async: true`, although
+  by setting `use ParkerWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule PettoCRAPWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import PettoCRAPWeb.ChannelCase
+      import ParkerWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint PettoCRAPWeb.Endpoint
+      @endpoint ParkerWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PettoCRAP.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Parker.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PettoCRAP.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Parker.Repo, {:shared, self()})
     end
 
     :ok

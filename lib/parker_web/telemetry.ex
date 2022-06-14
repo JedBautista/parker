@@ -1,4 +1,4 @@
-defmodule PettoCRAPWeb.Telemetry do
+defmodule ParkerWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -31,11 +31,11 @@ defmodule PettoCRAPWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("pettoCRAP.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("pettoCRAP.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("pettoCRAP.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("pettoCRAP.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("pettoCRAP.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("Parker.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("Parker.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("Parker.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("Parker.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("Parker.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -49,7 +49,7 @@ defmodule PettoCRAPWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {PettoCRAPWeb, :count_users, []}
+      # {ParkerWeb, :count_users, []}
     ]
   end
 end

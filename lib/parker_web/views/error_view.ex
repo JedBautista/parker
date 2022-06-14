@@ -1,5 +1,5 @@
-defmodule PettoCRAPWeb.ErrorView do
-  use PettoCRAPWeb, :view
+defmodule ParkerWeb.ErrorView do
+  use ParkerWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

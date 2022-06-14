@@ -1,9 +1,9 @@
-defmodule PettoCRAP.MixProject do
+defmodule Parker.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :pettoCRAP,
+      app: :Parker,
       version: "0.1.0",
       elixir: "~> 1.11.4",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule PettoCRAP.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PettoCRAP.Application, []},
+      mod: {Parker.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
